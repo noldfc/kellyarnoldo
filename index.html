@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelly & Arnoldo – Invitación de Boda</title>
+	<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Kelly & Arnoldo – Invitación de Boda">
+<meta property="og:description" content="¡Estás invitado a celebrar nuestra boda en Atlixco, Puebla! 15 de Noviembre, 2025.">
+<meta property="og:image" content="https://github.com/noldfc/kelly-arnoldo/blob/main/wedding-preview.jpg?raw=true"> <!-- Use a nice photo or banner -->
+<meta property="og:url" content="https://noldfc.github.io/kelly-arnoldo/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card (optional, but recommended) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kelly & Arnoldo – Invitación de Boda">
+<meta name="twitter:description" content="¡Estás invitado a celebrar nuestra boda en Atlixco, Puebla! 15 de Noviembre, 2025.">
+<meta name="twitter:image" content="https://github.com/noldfc/kelly-arnoldo/blob/main/wedding-preview.jpg?raw=true">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Montserrat:400,500|Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --kelly-blue: #abc7e1;
+      --coral-sennelier: #ffb5b7;
+      --fresh-air: #f4ecd3;
+      --corian-imperial: #f2cb47;
+      --sage-green: #87ae73;
+      --flamingo-orange: #e8916b;
+      --white: #ffffff;
+      --text: #3a2c1a;
+      --button: #abc7e1;
+      --button-hover: #87ae73;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--fresh-air);
+      color: var(--text);
+}
+  .decorative-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url('pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.08; /* Adjust this value for more or less subtlety */
+}
+    .lang-switch {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      z-index: 10;
+    }
+    .lang-switch button {
+      background: var(--white);
+      color: var(--text);
+      border: none;
+      border-radius: 20px;
+      padding: 0.4em 1.2em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1em;
+      margin-left: 0.5em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(166, 124, 82, 0.08);
+      transition: background 0.2s;
+    }
+    .lang-switch button.active {
+      background: var(--button);
+      color: var(--white);
+    }
+   .parallax-banner {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parallax-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: url('https://i.imgur.com/a3fZouN.jpegauto=format&fit=crop&w=1200&q=80') center top/cover no-repeat;
+  transform: translateY(0);
+  will-change: transform;
+  z-index: 0;
+}
+.parallax-banner .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(135, 174, 115, 0.45);
+  z-index: 1;
+}
+    .countdowns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      margin: 3em 0 2em 0;
+    }
+  .countdown-box {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(191, 174, 158, 1.0);
+  padding: 1.5em 2em;
+  text-align: center;
+  min-width: 320px;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+    }
+    .countdown-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5em;
+      color: var(--text);
+    }
+    .countdown {
+      font-size: 1.7rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--button);
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    .section {
+      max-width: 800px;
+      margin: 3em auto;
+      padding: 2.5em 2em;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s cubic-bezier(.4,0,.2,1);
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.5em;
+      color: var(--text);
+    }
+    .section p {
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 2em;
+    }
+    .story-section {
+      background: var(--sage-green);
+      color: var(--text);
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      margin: 2em 0;
+    }
+    .timeline-event {
+      background: var(--white);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 1.2em 1.5em;
+      max-width: 500px;
+      box-shadow: 0 2px 12px rgba(58, 44, 26, 0.08);
+      text-align: left;
+    }
+    .timeline-event strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 0.3em;
+    }
+.timeline-event {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.timeline-event[data-animation="slide-right"].animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-event[data-animation="slide-left"].animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-event[data-animation="slide-right"] {
+  transform: translateX(-50px);
+}
+.timeline-event[data-animation="slide-left"] {
+  transform: translateX(50px);
+}
+    /* Carousel styles */
+    .carousel-container {
+      max-width: 900px;
+      margin: 3em auto;
+      position: relative;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+      overflow: hidden;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .carousel {
+      width: 100%;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--kelly-blue);
+    }
+    .carousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(58, 44, 26, 0.08);
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      transition: opacity 0.7s;
+    }
+    .carousel img.active {
+      display: block;
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-controls {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .carousel-btn {
+      background: rgba(171, 199, 225, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 2rem;
+      color: var(--text);
+      cursor: pointer;
+      pointer-events: all;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1em;
+    }
+    .carousel-btn:hover {
+      background: var(--button-hover);
+      color: var(--white);
+    }
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+      margin: 1em 0 1.5em 0;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--button-hover);
+      cursor: pointer;
+      opacity: 0.6;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--button-hover);
+      opacity: 1;
+    }
+    .quote-section {
+      background: var(--coral-sennelier);
+      color: var(--white);
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 3em auto;
+      padding: 2em 1.5em;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+    }
+    .dresscode-section {
+      background: var(--corian-imperial);
+      color: var(--text);
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 3em auto;
+      padding: 2em 1.5em;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+    }
+    .dresscode-swatches {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin: 1em 0;
+    }
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 2px 8px rgba(58, 44, 26, 0.08);
+    }
+    .swatch.blue { background: #abc7e1; }
+    .swatch.coral { background: #ffb5b7; }
+    .swatch.yellow { background: #f2cb47; }
+    .swatch.green { background: #87ae73; }
+    .swatch.orange { background: #e8916b; }
+    .swatch.white { background: #ffffff; border: 2px solid #bfae9e; }
+    .registry-section {
+      background: var(--flamingo-orange);
+      color: var(--white);
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 3em auto;
+      padding: 2em 1.5em;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+    }
+.guestbook-section {
+  background: var(--white);
+}
+.guestbook-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.guestbook-form input, .guestbook-form textarea {
+  width: 100%;
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  border: 1px solid var(--kelly-blue);
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+.guestbook-form button {
+  background: var(--button);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 0.8em 2.5em;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.guestbook-form button:hover {
+  background: var(--button-hover);
+}
+.guestbook-messages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.guestbook-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3em;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 1.2em;
+  color: #3a2c1a;
+  text-align: left;
+  transition: opacity 0.7s;
+  opacity: 1;
+}
+.guestbook-message strong {
+  color: #e8916b;
+  font-size: 1.1em;
+}
+    .rsvp-btn {
+      display: inline-block;
+      padding: 0.9em 2.5em;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--button);
+      color: var(--white);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+      text-decoration: none;
+      margin-top: 1em;
+      box-shadow: 0 2px 8px rgba(166, 124, 82, 0.08);
+    }
+    .rsvp-btn:hover {
+      background: var(--button-hover);
+    }
+    .rsvp-section {
+      background: var(--kelly-blue);
+      color: var(--text);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+      max-width: 700px;
+      margin: 3em auto 2em auto;
+      padding: 2em;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s cubic-bezier(.4,0,.2,1);
+    }
+    .rsvp-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .rsvp-section h2 {
+      color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5em;
+    }
+    .rsvp-section form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      margin-top: 1em;
+    }
+    .rsvp-section input, .rsvp-section textarea, .rsvp-section select {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.7em 1em;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      box-sizing: border-box;
+    }
+    .rsvp-section button[type="submit"] {
+      background: var(--button);
+      color: var(--white);
+      border: none;
+      border-radius: 30px;
+      padding: 0.8em 2.5em;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      letter-spacing: 1px;
+      margin-top: 1em;
+      transition: background 0.2s;
+    }
+    .rsvp-section button[type="submit"]:hover {
+      background: var(--button-hover);
+    }
+    .thank-you {
+      color: var(--text);
+      font-size: 1.2em;
+      margin-top: 1.5em;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .faq-section {
+      background: var(--sage-green);
+      color: var(--text);
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 3em auto;
+      padding: 2em 1.5em;
+      text-align: left;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1em;
+    }
+    .faq {
+      margin-bottom: 1.5em;
+    }
+    .faq strong {
+      display: block;
+      margin-bottom: 0.3em;
+      color: var(--button);
+    }
+    .maps-section {
+      max-width: 900px;
+      margin: 3em auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+    }
+    .map-box {
+      flex: 1 1 350px;
+      min-width: 320px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(191, 174, 158, 0.08);
+      padding: 1em;
+      text-align: center;
+    }
+    .map-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5em;
+      color: var(--text);
+    }
+    .map-box iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 12px;
+    }
+    .map-box .address {
+      font-size: 1em;
+      color: var(--text);
+      margin: 0.5em 0 1em 0;
+    }
+    @media (max-width: 900px) {
+      .maps-section {
+        flex-direction: column;
+        gap: 1.5em;
+      }
+      .carousel {
+        height: 220px;
+      }
+      .carousel img {
+        height: 200px;
+      }
+    }
+    @media (max-width: 800px) {
+      .banner {
+        height: 40vh;
+        min-height: 180px;
+      }
+      .section, .rsvp-section, .quote-section, .dresscode-section, .faq-section, .registry-section {
+        padding: 1em;
+      }
+      .banner-content h1 {
+        font-size: 2.2rem;
+      }
+    }
+.parallax-banner .banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+}
+
+.parallax-banner .banner-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.carousel-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(.4,0,.2,1);
+}
+.carousel-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.quote-section, .dresscode-section, .registry-section, .faq-section, .maps-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(.4,0,.2,1);
+}
+
+.quote-section.visible, .dresscode-section.visible, .registry-section.visible, .faq-section.visible, .maps-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#timeline h2 {
+  color: #fff;
+}
+.faq-section h2 {
+  color: #fff;
+}
+.faq-section .faq strong {
+  color: #fff;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.8em 0;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.faq-question::after {
+  content: "▼";
+  float: right;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+  transform: rotate(-180deg);
+}
+
+.faq-question:hover {
+  color: var(--kelly-blue);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1), padding 0.4s ease;
+  color: #fff;
+  font-size: 1em;
+  padding: 0 0.5em 0 0.5em;
+  opacity: 0.9;
+}
+.faq-answer.open {
+  max-height: 400px; /* Increased from 200px */
+  padding: 0.5em 0.5em 1em 0.5em;
+}
+.dresscode-dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s;
+  opacity: 0;
+}
+.dresscode-dropdown-content.open {
+  max-height: 600px; /* Adjust if your image is taller */
+  opacity: 1;
+}
+.dresscode-dropdown-btn {
+  background: var(--button);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 0.7em 2em;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  margin-top: 1em;
+  transition: background 0.2s;
+}
+.dresscode-dropdown-btn:hover {
+  background: var(--button-hover);
+}
+.registry-section .rsvp-btn {
+  display: inline-block;
+  margin: 1.5em auto 0 auto;
+}
+  </style>
+</head>
+<body>
+
+<!-- Subtle Decorative Pattern -->
+<div class="decorative-pattern"></div>
+
+  <div class="lang-switch">
+    <button id="esBtn" class="active">ES</button>
+    <button id="enBtn">EN</button>
+  </div>
+<!-- Hero Banner -->
+<div class="parallax-banner">
+  <div class="parallax-bg"></div>
+  <div class="overlay"></div>
+  <div class="banner-content">
+    <h1>Kelly & Arnoldo</h1>
+  </div>
+</div>
+
+  <!-- Countdown Timers -->
+  <div class="countdowns">
+    <div class="countdown-box">
+      <div class="countdown-title" data-es="Sellamiento en el Templo" data-en="Temple Sealing">Sellamiento en el Templo</div>
+      <div class="countdown" id="countdown-temple"></div>
+      <div style="font-size:1em; color:var(--text);" data-es="15 de Noviembre, 10:00 AM" data-en="November 15th, 10:00 AM">15 de Noviembre, 10:00 AM</div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-title" data-es="Recepción" data-en="Reception">Recepción</div>
+      <div class="countdown" id="countdown-reception"></div>
+      <div style="font-size:1em; color:var(--text);" data-es="15 de Noviembre, 2:00 PM" data-en="November 15th, 2:00 PM">15 de Noviembre, 2:00 PM</div>
+    </div>
+  </div>
+
+  <!-- Invitation Section -->
+  <div class="section" id="invitation">
+    <h2 data-es="Estás Invitado" data-en="You're Invited">Estás Invitado</h2>
+    <p data-es="Nos alegra invitarte a celebrar nuestra boda.<br><strong>Fecha:</strong> 15 de Noviembre, 2025<br><strong>Lugar:</strong> Atlixco, Puebla<br><strong>Hora:</strong> Recepción 2:00 PM" data-en="We joyfully invite you to celebrate our wedding.<br><strong>Date:</strong> November 15th, 2025<br><strong>Location:</strong> Atlixco, Puebla<br><strong>Time:</strong> Reception 2:00 PM">Nos alegra invitarte a celebrar nuestra boda.<br><strong>Fecha:</strong> 15 de Noviembre, 2025<br><strong>Lugar:</strong> Atlixco, Puebla<br><strong>Hora:</strong> Recepción 2:00 PM</p>
+    <a href="#rsvp-section" class="rsvp-btn" data-es="Confirmar Asistencia" data-en="RSVP">Confirmar Asistencia</a>
+  </div>
+
+  <!-- Love Story Timeline -->
+  <div class="section story-section" id="timeline">
+    <h2 data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</h2>
+    <div class="timeline">
+  <div class="timeline-event" data-animation="slide-right">
+    <strong data-es="Nos Conocimos" data-en="How We Met">Nos conocimos</strong>
+    <span data-es="Nuestra historia inició cuando Kelly envió un mensaje a Arnoldo pidiendo ayuda mientras los dos servían como misioneros en BYU-Pathway." data-en="Our story began when Kelly messaged Arnoldo asking for help while they were both serving as BYU-Pathway missionaries">Nuestra historia inició cuando Kelly envió un mensaje a Arnoldo pidiendo ayuda mientras los dos servían como misioneros en BYU-Pathway.</span>
+  </div>
+  <div class="timeline-event" data-animation="slide-left">
+    <strong data-es="Nos Enamoramos" data-en="How We Fell in Love">Nos Enamoramos</strong>
+    <span data-es="Enamorarse a distancia no es fácil, pero lo logramos haciendo dates por Zoom, con flores, cartitas de amor, visitas  el uno al otro, comida y muchas risas." data-en="Falling in love from the distance is not easy, but we made it through Zoom dates, flowers, love letters, traveling to visit each other, food and lots of laughter.">Enamorarse a distancia no es fácil, pero lo logramos haciendo dates por Zoom, con flores, cartitas de amor, visitando el uno al otro, comida y muchas risas.</span>
+  </div>
+  <div class="timeline-event" data-animation="slide-right">
+    <strong data-es="Nos Comprometimos" data-en="We Got Engaged">Nuevos comienzos</strong>
+    <span data-es="Tras una cabalgata un día de Marzo, en un soleado día en el Ajusco, Arnoldo se arrodilló para proponer a Kelly estar juntos por esta vida y por la eternidad." data-en="After a horseride in March, under a bright sun, Arnoldo got on one knee to ask Kelly to be together for this life and for eternity.">"Tras una cabalgata un día de Marzo, en un soleado día en el Ajusco, Arnoldo se arrodilló para proponer a Kelly estar juntos por esta vida y por la eternidad.</span>
+  </div>
+</div>
+  </div>
+
+  <!-- Gallery Carousel -->
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <img src="https://i.imgur.com/GerybpX.jpeg" alt="Foto 1" class="active" style="object-position: center 48%;">
+      <img src="https://i.imgur.com/KwG8v1K.jpeg" alt="Foto 2" style="object-position: center 35%;">
+      <img src="https://i.imgur.com/AoPeHMa.jpeg" alt="Foto 3" style="object-position: center 80%;">
+      <img src="https://i.imgur.com/FmvvHBt.jpeg" alt="Foto 4" style="object-position: center 55%;">
+      <img src="https://i.imgur.com/uq4CIPI.jpeg" alt="Foto 5" style="object-position: center 60%;">
+      <img src="https://i.imgur.com/HlIONdR.jpeg" alt="Foto 6" style="object-position: center 65%;">
+      <img src="https://i.imgur.com/rOU4JMq.jpeg" alt="Foto 7" style="object-position: center 78%;">
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">&#10094;</button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">&#10095;</button>
+      </div>
+    </div>
+    <div class="carousel-indicators" id="carousel-indicators"></div>
+  </div>
+
+  <!-- Quote Section -->
+ <div class="quote-section" data-es="&quot;A veces me siento como si antes de eso no hubiera existido. Como si tú me hubieras inventado.&quot; – Emily Henry" data-en="&quot;Sometimes it feels like I didn't even exist before that. Like you invented me.&quot; – Emily Henry">&quot;A veces me siento como si antes de eso no hubiera existido. Como si tú me hubieras inventado.&quot; – Emily Henry</div>
+
+  <!-- Dress Code Section -->
+  <div class="dresscode-section">
+    <h2 data-es="Código de Vestimenta" data-en="Dress Code">Código de Vestimenta</h2>
+    <p data-es="Formal. Colores sugeridos:" data-en="Formal. Suggested colors:">Formal. Colores sugeridos:</p>
+    <div class="dresscode-swatches">
+      <div class="swatch blue" title="Kelly Blue"></div>
+      <div class="swatch coral" title="Coral Sennelier"></div>
+      <div class="swatch yellow" title="Corian Imperial"></div>
+      <div class="swatch green" title="Sage Green"></div>
+      <div class="swatch orange" title="Flamingo Orange"></div>
+    </div>
+      <button class="dresscode-dropdown-btn" type="button" data-es="Expande para ver inspo" data-en="Expand for inspo">Expande para ver inspo</button>
+      <div class="dresscode-dropdown-content">
+      <img src="https://i.imgur.com/7WXsFW0.png" alt="Dress code inspiration" style="max-width: 40%; height: auto; display: block; margin: 1em auto; border-radius:12px;box-shadow:0 2px 12px rgba(58,44,26,0.08);">
+</div>
+    </div>
+  </div>
+
+  <!-- Gift Registry Section -->
+ <div class="registry-section">
+  <h2 data-es="Mesa de Regalos" data-en="Gift Registry">Mesa de Regalos</h2>
+  <p data-es="Si deseas apoyarnos con un regalo para nuestro nuevo hogar juntos, puedes hacerlo en este link:" data-en="If you would like to support us with a gift for our new home together, you can using this link:">
+  Si deseas apoyarnos con un regalo para nuestro nuevo hogar juntos, puedes hacerlo en este link:
+</p>
+<a href="https://www.amazon.com.mx/wedding/share/KellyArnoldo" target="_blank" class="rsvp-btn" data-es="Ver aquí" data-en="See here">Ver aquí</a>
+</div>
+
+  <!-- Maps Section -->
+  <div class="maps-section">
+    <div class="map-box">
+      <h3 data-es="Templo de Puebla Mexico" data-en="Puebla Mexico Temple">Templo de Puebla Mexico</h3>
+      <div class="address">15 de Mayo 1, Los Cipreses, 72114 Heroica Puebla de Zaragoza, Pue.</div>
+      <iframe src="https://www.google.com/maps?q=15+de+Mayo+1,+Los+Cipreses,+72114+Heroica+Puebla+de+Zaragoza,+Pue.&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a href="https://maps.app.goo.gl/mwDT89Hyq8hRekTN6" target="_blank" class="rsvp-btn" style="margin-top:1em;" data-es="Ver en Google Maps" data-en="View on Google Maps">Ver en Google Maps</a>
+    </div>
+    <div class="map-box">
+      <h3 data-es="Recepción" data-en="Reception">Recepción</h3>
+      <div class="address">VHHQ+8JC Emiliano Zapata Nexatengo, Puebla</div>
+      <iframe src="https://www.google.com/maps?q=VHHQ%2B8JC+Emiliano+Zapata+Nexatengo,+Puebla&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a href="https://goo.gl/maps/oMnSTxckepQfKn4g9" target="_blank" class="rsvp-btn" style="margin-top:1em;" data-es="Ver en Google Maps" data-en="View on Google Maps">Ver en Google Maps</a>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2 data-es="Preguntas Frecuentes" data-en="FAQs">Preguntas Frecuentes</h2>
+    <div class="faq">
+</div>
+<div class="faq">
+    <button class="faq-question" type="button" data-es="¿Puedo asistir al sellamiento en el templo?" data-en="Can I attend the temple sealing?">¿Puedo asistir al sellamiento en el templo?</button>
+    <div class="faq-answer" data-es="Debido a las limitaciones de espacio y el carácter sagrado de la ordenanza del sellamiento en el Templo de Puebla México, desafortunadamente no podremos tener a todos nuestros invitados dentro. De cualquier forma, nos encantaría contar con su presencia en los jardines del Templo alrededor de las 10:30 a.m. <br> Para conocer más sobre la ordenanza del sellamiento, te invitamos a ver <a href='https://youtu.be/0kRDL6nuFcE?si=3hX3RKjGGIQacKoT' target='_blank'>este video.</a>" data-en="Due to space limitations and the sacred nature of the sealing ordinance at the Puebla Mexico Temple, unfortunately we are unable to have all our guests inside. However, we would love to have your presence in the temple grounds around 10:30 a.m.
+	<br>To know more about the ordinance of the sealing, we invite you to watch <a href='https://youtu.be/gA6aTiMDYho?si=CfNNB7CnBGB0FfQ4' target='_blank'> this video.</a>">Debido a las limitaciones de espacio y el carácter sagrado de la ordenanza del sellamiento en el Templo de Puebla México, desafortunadamente no podremos tener a todos nuestros invitados dentro.</div>
+  </div>
+<div class="faq">
+    <button class="faq-question" type="button" data-es="¿Puedo llevar niños a la recepción?" data-en="Can I take kids to the reception?">¿Puedo llevar niños a la recepción?</button>
+    <div class="faq-answer" data-es="¡Por supuesto! Los niños son bienvenidos. Solamente te pedimos que nos ayudes a mantener el área libre durante el baile de los novios." data-en="Of course! Children are welcome. We only ask for your kind help in making sure the area is cleared during the bride and groom’s dance.">¡Por supuesto! Los niños son bienvenidos. Solamente te pedimos que nos ayudes a mantener el área libre durante el baile de los novios.</div>
+  </div>
+<div class="faq">
+    <button class="faq-question" type="button" data-es="¿A qué hora termina la recepción?" data-en="What time does the reception end?">¿A qué hora termina la recepción?</button>
+    <div class="faq-answer" data-es="Estaremos concluyendo la celebración a las 7 p.m." data-en="We will be concluding our celebration at 7 p.m.">Estaremos concluyendo la celebración a las 7 p.m.</div>
+  </div>
+   <div class="faq">
+    <button class="faq-question" type="button" data-es="¿Cómo puedo llegar a la boda y dónde me puedo hospedar?" data-en="How can I get to the the wedding and where can I stay?">¿Cómo puedo llegar a la boda y dónde me puedo hospedar?</button>
+    <div class="faq-answer" data-es="La ceremonia en el templo se llevará a cabo en Puebla, que está aproximadamente a 2.5 horas de la Ciudad de México. Puedes volar tanto a la Ciudad de México como directamente a Puebla. La recepción será en Atlixco, que se encuentra a unos 40 minutos de la ciudad de Puebla.<br> Para tu comodidad, te recomendamos hospedarte en Atlixco (para estar cerca de la recepción) o en la ciudad de Puebla (donde hay una mayor variedad de hoteles y Airbnbs). Ambas opciones son buenas, dependiendo de tus planes y preferencias.<br> Si necesitas recomendaciones específicas de hoteles o Airbnbs, ¡avísanos! Con gusto te ayudamos." data-en="The temple sealing will take place in Puebla, which is about 2.5 hours from Mexico City. You can fly into either Mexico City or Puebla directly. The reception will be in Atlixco, located about 40 minutes from the city of Puebla.<br> For your convenience, we recommend booking accommodations either in Atlixco (for easy access to the reception) or in the city 	of Puebla (which offers a wider range of hotels and Airbnbs). Both options are great, depending on your travel plans and preferences.<br> If you’d like specific hotel or Airbnb recommendations, please let us know. We’re happy to help!">La ceremonia en el templo se llevará a cabo en Puebla, que está aproximadamente a 2.5 horas de la Ciudad de México.</div>
+  </div>
+  </div>
+
+<!-- Guestbook Section -->
+<div class="section guestbook-section" id="guestbook">
+  <h2 data-es="Libro de Visitas" data-en="Guestbook">Libro de Visitas</h2>
+  <p data-es="Déjanos un mensaje o deseo para nuestra boda." data-en="Leave us a message or wish for our wedding.">Déjanos un mensaje o deseo para nuestra boda.</p>
+  
+  <div class="guestbook-messages">
+    <div class="guestbook-message">
+      <strong>Arnoldo(papá)</strong>
+      <p>Por esta vida y la eternidad</p>
+    </div>
+    <div class="guestbook-message">
+      <strong>Patricia</strong>
+      <p>Que el Señor los colme de felicidad, ¡besos y abrazos!</p>
+    </div>
+    <div class="guestbook-message">
+  <strong>Mafer Domínguez</strong>
+  <p>Amiga, verte feliz me llena el corazón. Deseo que esta historia tan suya dure toda la vida y que sigan construyendo sueños juntos. Te amo infinito.</p>
+</div>
+ <div class="guestbook-message">
+      <strong>Vero/Tim</strong>
+      <p>Les deseamos todo lo mejor del mundo en su nueva etapa que esta por comenzar. Bendiciones.</p>
+    </div>
+<div class="guestbook-message">
+      <strong>Familia Álvarez Anieves</strong>
+      <p>No hay mayor felicidad que aquella que dura para siempre, nuestras felicitaciones, les amamos</p>
+    </div>
+<div class="guestbook-message">
+      <strong>Cesar Gonzalez</strong>
+      <p>Les deseo lo mejor en esta nueva etapa de vida, que encuentren felicidad y paz juntos</p>
+    </div>
+<div class="guestbook-message">
+      <strong>Familia Pineda Rojas</strong>
+      <p>Muchas felicidades !! Estamos muy felices y emocionados por ustedes . Gracias por hacernos parte de este momento tan especial!! Les queremos mucho y les deseamos todas las bendiciones de los cielos!! 🫶</p>
+    </div>
+<div class="guestbook-message">
+      <strong>Shirley</strong>
+      <p>Les deseo todo el amor del mundo</p>
+    </div>
+<div class="guestbook-message">
+      <strong>Vicky Susana Pernia Cardona</strong>
+      <p>Para mi es un honor estar en su boda, los amo infinitamente</p>
+    </div>
+	  
+<form id="guestbookForm" class="guestbook-form" action="https://formspree.io/f/xovwjllk" method="POST">
+  <input type="text" name="name" required placeholder="Nombre / Name">
+  <textarea name="message" rows="3" required placeholder="Tu mensaje / Your message"></textarea>
+  <button type="submit" data-es="Enviar" data-en="Send">Enviar</button>
+</form>
+    </div>
+  </div>
+</div>
+
+  <!-- RSVP Section -->
+  <div class="rsvp-section" id="rsvp-section">
+    <h2 data-es="Confirma tu Asistencia" data-en="Kindly Respond">Confirma tu Asistencia</h2>
+    <form id="rsvpForm" action="https://formspree.io/f/xldbvvpa" method="POST">
+      <input type="text" name="name" required placeholder="Nombre / Name">
+      <select name="attendance" required>
+        <option value="" disabled selected data-es="¿Asistirás?" data-en="Will you attend?">¿Asistirás?</option>
+        <option value="Sí" data-es="Sí, asistiré" data-en="Yes, I will attend">Sí, asistiré</option>
+        <option value="No" data-es="No podré asistir" data-en="No, I can't attend">No podré asistir</option>
+      </select>
+      <textarea name="message" rows="3" placeholder="Mensaje / Message"></textarea>
+      <button type="submit" data-es="Enviar" data-en="Send">Enviar</button>
+    </form>
+    <div class="thank-you" style="display:none;" data-es="¡Gracias por confirmar tu asistencia!" data-en="Thank you for your RSVP!">¡Gracias por confirmar tu asistencia!</div>
+  </div>
+
+  <script>
+// Add these at the top of your script
+const esBtn = document.getElementById('esBtn');
+const enBtn = document.getElementById('enBtn');
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  esBtn.classList.toggle('active', lang === 'es');
+  enBtn.classList.toggle('active', lang === 'en');
+  
+  // Update all elements with data-es/data-en attributes
+  document.querySelectorAll('[data-es]').forEach(el => {
+    if (el.tagName === 'BUTTON' || el.tagName === 'OPTION') {
+      el.textContent = el.getAttribute(lang === 'es' ? 'data-es' : 'data-en');
+    } else {
+      el.innerHTML = el.getAttribute(lang === 'es' ? 'data-es' : 'data-en');
+    }
+  });
+  
+  // Update dropdown button if it's currently showing "close" text
+  const dropdownBtn = document.querySelector('.dresscode-dropdown-btn');
+  const dropdownContent = document.querySelector('.dresscode-dropdown-content');
+  if (dropdownContent && dropdownContent.classList.contains('open')) {
+    dropdownBtn.textContent = lang === 'es' ? 'Cerrar inspo' : 'Close inspo';
+  }
+}
+
+// Add these event listeners OUTSIDE the function
+esBtn.onclick = () => setLang('es');
+enBtn.onclick = () => setLang('en');
+setLang('es'); // Initialize with Spanish on page load
+
+    // Scroll-triggered animation for sections
+    function revealSections() {
+      const sections = document.querySelectorAll(
+  '.section, .rsvp-section, .quote-section, .dresscode-section, .faq-section, .registry-section, .carousel-container, .maps-section'
+);
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < trigger) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('DOMContentLoaded', revealSections);
+
+  // RSVP form handler - REPLACE EXISTING ONE
+document.getElementById('rsvpForm').onsubmit = function(e) {
+  e.preventDefault();
+  const form = this;
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      form.style.display = 'none';
+      document.querySelector('.thank-you').style.display = 'block';
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwnProperty.call(data, 'errors')) {
+          alert('Error: ' + data.errors.map(error => error.message).join(', '));
+        } else {
+          alert('Hubo un problema enviando tu RSVP. / There was a problem submitting your RSVP.');
+        }
+      });
+    }
+  }).catch(error => {
+    console.error('Error:', error);
+    alert('Error de conexión. / Connection error.');
+  });
+};
+
+    // Countdown timers (robust, local time zone, 2025)
+    function updateCountdown(id, year, month, day, hour, minute) {
+      // month is 1-based (1=Jan)
+      var now = new Date();
+      var eventDate = new Date(year, month-1, day, hour, minute, 0, 0);
+      var diff = eventDate - now;
+      var el = document.getElementById(id);
+      if (diff <= 0) {
+        el.innerHTML = '<span data-es="¡Ya comenzó!" data-en="It has started!">¡Ya comenzó!</span>';
+        return;
+      }
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      var minutes = Math.floor((diff / (1000 * 60)) % 60);
+      var seconds = Math.floor((diff / 1000) % 60);
+      el.innerHTML = `<span>${days}d ${hours}h ${minutes}m ${seconds}s</span>`;
+    }
+    setInterval(function() {
+      updateCountdown('countdown-temple', 2025, 11, 15, 10, 0);
+      updateCountdown('countdown-reception', 2025, 11, 15, 14, 0);
+    }, 1000);
+
+    // Carousel logic
+    const carousel = document.getElementById('carousel');
+    const images = carousel.querySelectorAll('img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.getElementById('carousel-indicators');
+    let current = 0;
+    function showSlide(idx) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+    function goToSlide(idx) {
+      current = (idx + images.length) % images.length;
+      showSlide(current);
+    }
+    prevBtn.onclick = () => goToSlide(current - 1);
+    nextBtn.onclick = () => goToSlide(current + 1);
+    // Dots
+    indicators.innerHTML = '';
+    images.forEach((img, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => goToSlide(i);
+      indicators.appendChild(dot);
+    });
+    // Auto-advance
+    setInterval(() => {
+      goToSlide(current + 1);
+    }, 4000);
+
+/// Guestbook form handling - REPLACE BOTH EXISTING HANDLERS WITH THIS
+document.getElementById('guestbookForm').onsubmit = function(e) {
+  e.preventDefault();
+  const form = this;
+  const name = form.querySelector('input[name="name"]').value;
+  const message = form.querySelector('textarea[name="message"]').value;
+  
+  // Submit to Formspree
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      // Create new message element for display
+      const messageEl = document.createElement('div');
+      messageEl.className = 'guestbook-message';
+      messageEl.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
+      messageEl.style.display = 'none';
+      messageEl.style.opacity = '0';
+      
+      // Add to messages container
+      document.querySelector('.guestbook-messages').prepend(messageEl);
+      
+      // Clear form
+      form.reset();
+      
+      // Restart rotation to include the new message
+      rotateGuestbookMessages();
+      
+      // Optional: Show success message
+      alert('¡Mensaje enviado! / Message sent!');
+    } else {
+      alert('Hubo un problema enviando tu mensaje. / There was a problem sending your message.');
+    }
+  }).catch(error => {
+    console.error('Error:', error);
+    alert('Error de conexión. / Connection error.');
+  });
+};
+// Timeline animation
+function animateTimeline() {
+  const timelineEvents = document.querySelectorAll('.timeline-event');
+  const triggerPosition = window.innerHeight * 0.8;
+  
+  timelineEvents.forEach(event => {
+    const top = event.getBoundingClientRect().top;
+    if (top < triggerPosition) {
+      event.classList.add('animated');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateTimeline);
+window.addEventListener('DOMContentLoaded', animateTimeline);
+
+// Parallax effect
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.pageYOffset;
+  const parallaxBg = document.querySelector('.parallax-bg');
+  if (parallaxBg) {
+    parallaxBg.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+  }
+});
+// Rotating guestbook messages in groups of 4
+function rotateGuestbookMessages() {
+  const messagesContainer = document.querySelector('.guestbook-messages');
+  const messages = document.querySelectorAll('.guestbook-message');
+  if (messages.length === 0) return;
+  
+  // Calculate how many groups we'll have
+  const messagesPerGroup = 4;
+  const totalGroups = Math.ceil(messages.length / messagesPerGroup);
+  let currentGroup = 0;
+  
+  // Hide all messages initially
+  messages.forEach(msg => {
+    msg.style.opacity = '0';
+    msg.style.display = 'none';
+  });
+  
+  // Function to show a specific group
+  function showGroup(groupIndex) {
+    // Hide all messages first
+    messages.forEach(msg => {
+      msg.style.opacity = '0';
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 700);
+    });
+    
+    // Calculate start and end indices for this group
+    const startIdx = groupIndex * messagesPerGroup;
+    const endIdx = Math.min(startIdx + messagesPerGroup, messages.length);
+    
+    // Show messages in this group
+    for (let i = startIdx; i < endIdx; i++) {
+      setTimeout(() => {
+        messages[i].style.display = 'block';
+        setTimeout(() => {
+          messages[i].style.opacity = '1';
+        }, 50);
+      }, 700);
+    }
+  }
+  
+  // Show first group immediately
+  showGroup(0);
+  
+  // Set up rotation if we have more than one group
+  if (totalGroups > 1) {
+    setInterval(() => {
+      currentGroup = (currentGroup + 1) % totalGroups;
+      showGroup(currentGroup);
+    }, 5000); // Change groups every 5 seconds
+  }
+}
+
+document.addEventListener('DOMContentLoaded', rotateGuestbookMessages);
+
+// FAQ dropdown logic
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = this.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    
+    // Close all other answers
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+    
+    // Open the clicked one if it wasn't already open
+    if (!isOpen) {
+      answer.classList.add('open');
+      this.classList.add('active');
+    }
+  });
+});
+// Dress code dropdown logic
+document.querySelector('.dresscode-dropdown-btn').addEventListener('click', function() {
+  const content = document.querySelector('.dresscode-dropdown-content');
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open');
+  
+  // Get current language
+  const currentLang = document.documentElement.lang || 'es';
+  
+  // Update button text based on state and language
+  if (isOpen) {
+    // Currently open, so we're closing it
+    this.textContent = currentLang === 'es' ? 'Expande para ver inspo' : 'Expand for inspo';
+  } else {
+    // Currently closed, so we're opening it
+    this.textContent = currentLang === 'es' ? 'Cerrar inspo' : 'Close inspo';
+  }
+});
+  </script>
+</body>
+</html>
